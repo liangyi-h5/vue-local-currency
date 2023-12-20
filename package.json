@@ -1,0 +1,65 @@
+{
+  "name": "vue-local-currency",
+  "version": "1.0.0",
+  "description": "Localized currency conversion for Vue 3",
+  "main": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "npm run build && cd demo && npm run dev",
+    "build:demo": "npm run build && cd demo && npm install && npm run build",
+    "pre-release": "git checkout main && git pull",
+    "branch-merge": "git push --tags && git push",
+    "release-patch": "npm run pre-release && npm version patch -m \"tag: Version updated to %s patch\" && npm run branch-merge",
+    "release-minor": "npm run pre-release && npm version minor -m \"tag: Version updated to %s minor\" && npm run branch-merge",
+    "release-major": "npm run pre-release && npm version major -m \"tag: Version updated to %s major\" && npm run branch-merge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangyi-h5/vue-local-currency.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/lib/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "vue3",
+    "currency",
+    "vue currency",
+    "vue local currency",
+    "vue local currency convert",
+    "vue local currency format",
+    "vue local currency format conver"
+  ],
+  "author": "Liangxian li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangyi-h5/vue-local-currency/issues"
+  },
+  "homepage": "https://github.com/liangyi-h5/vue-local-currency#readme",
+  "dependencies": {
+    "big.js": "^6.0.0",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.23.6",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.9.1",
+    "tslib": "^2.6.2",
+    "@types/big.js": "^6.0.0"
+  }
+}
