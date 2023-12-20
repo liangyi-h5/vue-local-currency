@@ -1,4 +1,4 @@
-import { effectScope, reactive, computed, markRaw, getCurrentInstance, inject } from "vue"
+import { effectScope, reactive, computed, markRaw, getCurrentInstance, inject, Raw } from "vue"
 import Big from "big.js"
 import { LocalCurrency as LocalCurrencyType, SetCurrency, ComputeTypeEnum, LocalCurrencyPlugin } from "./types"
 export type LocalCurrency = LocalCurrencyType
@@ -41,9 +41,12 @@ const setActiveLocalCurrency = (localCurrency: LocalCurrency) => (activeLocalCur
  * @description Create localCurrency instance
  * @returns {LocalCurrency}
  */
+
 export const createLocalCurrency = (
   plugin?: LocalCurrencyPlugin
-) => {
+): Raw<{
+  install: (app: any) => void;
+}> => {
   let localCurrency = createInitLocalCurrency()
   localCurrency._plugin = plugin
   const setUp = () => {
