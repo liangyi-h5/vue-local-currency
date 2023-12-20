@@ -1,6 +1,6 @@
 {
   "name": "vue-local-currency",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Localized currency conversion for Vue 3",
   "main": "./dist/index.mjs",
   "types": "./dist/types/index.d.ts",
