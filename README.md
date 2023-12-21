@@ -82,8 +82,8 @@ const changeCurrency = () => {
   const currency = {
     isoCode: "HKD", // currency code
     locales: "zh-CN", // Localized style configuration
-    stuExchangeRate: 6.89, // USD to HKD exchange rate
-    utsExchangeRate: 0.14513788098693758 //  HKD to USD exchange rate
+    utsExchangeRate: 6.89, // USD to HKD exchange rate
+    stuExchangeRate: 0.14513788098693758 // HKD to USD exchange rate
   }
   setLocalCurrency(currency)
 }
@@ -97,8 +97,8 @@ const changeCurrency = () => {
 | --------------- | ---------- | ---------- |
 | isoCode      | currency code | string('USD') |
 | locales | Localized style configuration | string('en-US') |
-| stuExchangeRate |  USD to HKD exchange rate | number |
-| utsExchangeRate | HKD to USD exchange rate | number |
+| utsExchangeRate |  USD to HKD exchange rate | number |
+| stuExchangeRate | HKD to USD exchange rate | number |
 
 
 #### locales
